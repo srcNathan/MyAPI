@@ -1,7 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
 using MyAPI.Models;
-using System;
-using System.Collections.Generic;
 
 namespace MyAPI.Controllers
 {
