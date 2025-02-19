@@ -28,5 +28,23 @@ namespace MyAPI.Controllers
             }
             return weatherForecasts;
         }
+
+
+        [HttpGet("{numDays}")]
+        public IEnumerable<WeatherForecast> Get(int numDays)
+        {
+            var rng = new Random();
+            var weatherForecasts = new List<WeatherForecast>();
+            for (int i = 0; i < numDays; i++)
+            {
+                weatherForecasts.Add(new WeatherForecast
+                {
+                    Date = DateTime.Now.AddDays(i),
+                    TemperatureC = rng.Next(-20, 55),
+                    Summary = Summaries[rng.Next(Summaries.Length)]
+                });
+            }
+            return weatherForecasts;
+        }
     }
 }
